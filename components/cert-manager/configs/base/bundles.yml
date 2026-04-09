@@ -1,0 +1,25 @@
+apiVersion: trust.cert-manager.io/v1alpha1
+kind: Bundle
+metadata:
+  name: root-ca-bundle
+spec:
+  sources:
+    - useDefaultCAs: true # system roots
+    - inLine: |
+        -----BEGIN CERTIFICATE-----
+        MIIBgTCCASegAwIBAgIQQdWqCWUe5QuAJz2E6Gd5qDAKBggqhkjOPQQDAjAfMR0w
+        GwYDVQQDExRCbGFjayBRdWFydHogUm9vdCBDQTAeFw0yNjAzMTgyMzE2NTdaFw0z
+        NjAzMTUyMzE2NTdaMB8xHTAbBgNVBAMTFEJsYWNrIFF1YXJ0eiBSb290IENBMFkw
+        EwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEvFCr1FyiuAl+lE5NKJPKPAtXE3pvewNx
+        A0oUo5ROYchxtuWP17h5IbjHhq3Y0twOWRur2B4tH5AW9Tq1e9iXj6NFMEMwDgYD
+        VR0PAQH/BAQDAgEGMBIGA1UdEwEB/wQIMAYBAf8CAQEwHQYDVR0OBBYEFIzUGJk7
+        e0cadwVMPj6WV/9npijSMAoGCCqGSM49BAMCA0gAMEUCICoz66KTD7JKP3fgEfTZ
+        0L8nfa92UGyCCm3COQrYd4SJAiEAo0pk/bVrfZFxYPT4/1br8qu/J0RU0gDJXuqb
+        OBJe5sk=
+        -----END CERTIFICATE-----
+  target:
+    configMap:
+      key: ca-bundle.crt
+    namespaceSelector:
+      matchLabels:
+        trust-manager: enabled
