@@ -11,8 +11,7 @@ spec:
         role: cert-manager
         mountPath: /v1/auth/kubernetes
         serviceAccountRef:
-          name: cert-manager
-          namespace: cert-manager
+          name: cert-managerß
 ---
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
@@ -27,5 +26,4 @@ spec:
         role: cert-manager
         mountPath: /v1/auth/kubernetes
         serviceAccountRef:
-          name: cert-manager
-          namespace: cert-manager
+          name: cert-managerß
