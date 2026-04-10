@@ -31,3 +31,4 @@ spec:
     commonLabels:
       blackquartz.io/app: "envoy-gateway"
       blackquartz.io/environment: "core"
+    kubernetesClusterDomain: ${CLUSTER_DOMAIN}
