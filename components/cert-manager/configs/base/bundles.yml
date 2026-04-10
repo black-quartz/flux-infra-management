@@ -20,6 +20,4 @@ spec:
   target:
     configMap:
       key: ca-bundle.crt
-    namespaceSelector:
-      matchLabels:
-        trust-manager: enabled
+    namespaceSelector: {}
