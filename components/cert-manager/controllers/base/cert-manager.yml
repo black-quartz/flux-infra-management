@@ -14,7 +14,7 @@ metadata:
   name: cert-manager
   namespace: cert-manager
 spec:
-  serviceAccountName: cert-manager-deploy
+  serviceAccountName: flux
   targetNamespace: cert-manager
   interval: 30m
   chart:
@@ -40,7 +40,7 @@ metadata:
   name: trust-manager
   namespace: cert-manager
 spec:
-  serviceAccountName: cert-manager-deploy
+  serviceAccountName: flux
   targetNamespace: cert-manager
   interval: 30m
   chart:

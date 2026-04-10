@@ -14,7 +14,7 @@ metadata:
   name: envoy-gateway
   namespace: envoy-gateway-system
 spec:
-  serviceAccountName: envoy-gateway-deploy
+  serviceAccountName: flux
   targetNamespace: envoy-gateway-system
   interval: 30m
   chart:
