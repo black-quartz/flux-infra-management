@@ -7,10 +7,17 @@ spec:
   gatewayClassName: cluster-gateway
   listeners:
     - name: vault-http
-      protocol: HTTP
-      port: 80
       hostname: vault.blackquartz.io
-    - name: elastic-http
       protocol: HTTP
       port: 80
+      allowedRoutes:
+        namespaces:
+          from: All
+    - name: elastic-http
       hostname: elastic.blackquartz.io
+      protocol: HTTP
+      port: 80
+      allowedRoutes:
+        namespaces:
+          from: All
+
