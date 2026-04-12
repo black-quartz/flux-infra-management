@@ -4,7 +4,6 @@ metadata:
   name: black-quartz-root-ca
 spec:
   sources:
-    - useDefaultCAs: true # system roots
     - inLine: |
         -----BEGIN CERTIFICATE-----
         MIIBgTCCASegAwIBAgIQQdWqCWUe5QuAJz2E6Gd5qDAKBggqhkjOPQQDAjAfMR0w
