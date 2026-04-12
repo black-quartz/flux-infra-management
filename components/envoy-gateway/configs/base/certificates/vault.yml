@@ -8,6 +8,9 @@ spec:
     name: vault-gateway-issuer
     kind: ClusterIssuer
   secretName: vault-tls-secret
+  privateKey:
+    algorithm: ECDSA
+    size: 256
   commonName: vault.blackquartz.io
   dnsNames:
     - vault.blackquartz.io
