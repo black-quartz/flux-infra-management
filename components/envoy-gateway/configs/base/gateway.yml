@@ -12,25 +12,17 @@ spec:
       hostname: vault.blackquartz.io
       tls:
         certificateRefs:
-          - kind: Secret
-            group: ""
-            name: vault-tls-secret
+          - name: vault-tls-secret
       allowedRoutes:
         namespaces:
-          selector:
-            matchLabels:
-              kubernetes.io/metadata.name: vault
+          from: All
     - name: elastic-https
       protocol: HTTPS
       port: 443
       hostname: elastic.blackquartz.io
       tls:
         certificateRefs:
-          - kind: Secret
-            group: ""
-            name: elastic-tls-secret
+          - name: elastic-tls-secret
       allowedRoutes:
         namespaces:
-          selector:
-            matchLabels:
-              kubernetes.io/metadata.name: elastic-stack
+          from: All
