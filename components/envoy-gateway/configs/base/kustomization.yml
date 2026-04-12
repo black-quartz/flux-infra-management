@@ -4,3 +4,6 @@ resources:
   - envoy-proxy.yml
   - gatewayclass.yml
   - gateway.yml
+
+  - certificates/elastic.yml
+  - certificates/vault.yml

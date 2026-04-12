@@ -1,0 +1,16 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: elastic-tls
+  namespace: envoy-gateway-system
+spec:
+  issuerRef:
+    name: vault-gateway-issuer
+    kind: ClusterIssuer
+  secretName: elastic-tls-secret
+  commonName: elastic.blackquartz.io
+  dnsNames:
+    - elastic.blackquartz.io
+  usages:
+    - server auth
+    - client auth

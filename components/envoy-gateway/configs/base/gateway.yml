@@ -6,18 +6,31 @@ metadata:
 spec:
   gatewayClassName: cluster-gateway
   listeners:
-    - name: vault-http
+    - name: vault-https
+      protocol: HTTPS
+      port: 443
       hostname: vault.blackquartz.io
-      protocol: HTTP
-      port: 80
+      tls:
+        certificateRefs:
+          - kind: Secret
+            group: ""
+            name: vault-tls-secret
       allowedRoutes:
         namespaces:
-          from: All
-    - name: elastic-http
+          selector:
+            matchLabels:
+              kubernetes.io/metadata.name: vault
+    - name: elastic-https
+      protocol: HTTPS
+      port: 443
       hostname: elastic.blackquartz.io
-      protocol: HTTP
-      port: 80
+      tls:
+        certificateRefs:
+          - kind: Secret
+            group: ""
+            name: elastic-tls-secret
       allowedRoutes:
         namespaces:
-          from: All
-
+          selector:
+            matchLabels:
+              kubernetes.io/metadata.name: elastic-stack
