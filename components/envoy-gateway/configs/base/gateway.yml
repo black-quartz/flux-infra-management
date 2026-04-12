@@ -12,7 +12,9 @@ spec:
       hostname: vault.blackquartz.io
       tls:
         certificateRefs:
-          - name: vault-tls-secret
+          - kind: Secret
+            group: ""
+            name: vault-tls-secret
       allowedRoutes:
         namespaces:
           selector:
@@ -24,7 +26,9 @@ spec:
       hostname: elastic.blackquartz.io
       tls:
         certificateRefs:
-          - name: elastic-tls-secret
+          - kind: Secret
+            group: ""
+            name: elastic-tls-secret
       allowedRoutes:
         namespaces:
           selector:
