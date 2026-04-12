@@ -1,7 +1,7 @@
 apiVersion: trust.cert-manager.io/v1alpha1
 kind: Bundle
 metadata:
-  name: root-ca-bundle
+  name: black-quartz-root-ca
 spec:
   sources:
     - useDefaultCAs: true # system roots
@@ -17,6 +17,18 @@ spec:
         0L8nfa92UGyCCm3COQrYd4SJAiEAo0pk/bVrfZFxYPT4/1br8qu/J0RU0gDJXuqb
         OBJe5sk=
         -----END CERTIFICATE-----
+  target:
+    configMap:
+      key: ca.crt
+    namespaceSelector: {}
+---
+apiVersion: trust.cert-manager.io/v1alpha1
+kind: Bundle
+metadata:
+  name: system-cas
+spec:
+  sources:
+    - useDefaultCAs: true # system roots
   target:
     configMap:
       key: ca-bundle.crt
