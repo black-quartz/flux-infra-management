@@ -1,0 +1,34 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: actions-runner-controller
+  namespace: arc-system
+spec:
+  type: "oci"
+  interval: 5m
+  url: oci://ghcr.io/actions/actions-runner-controller-charts
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: actions-runner-controller
+  namespace: arc-system
+spec:
+  serviceAccountName: flux
+  targetNamespace: arc-system
+  interval: 30m
+  chart:
+    spec:
+      chart: gha-runner-scale-set-controller
+      version: "0.14.x"
+      sourceRef:
+        kind: HelmRepository
+        name: actions-runner-controller
+      interval: 12h
+  releaseName: actions-runner-controller
+  # https://github.com/actions/actions-runner-controller/blob/master/charts/actions-runner-controller/values.yaml
+  values:
+    replicaCount: 1
+    flags:
+      logLevel: info
+      logFormat: json
