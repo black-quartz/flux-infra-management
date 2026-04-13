@@ -26,3 +26,13 @@ spec:
       allowedRoutes:
         namespaces:
           from: All
+    - name: elasticsearch-https
+      protocol: HTTPS
+      port: 443
+      hostname: elasticsearch.blackquartz.io
+      tls:
+        certificateRefs:
+          - name: elasticsearch-tls-secret
+      allowedRoutes:
+        namespaces:
+          from: All
