@@ -6,4 +6,5 @@ resources:
   - gateway.yml
 
   - certificates/elastic.yml
+  - certificates/elasticsearch.yml
   - certificates/vault.yml
