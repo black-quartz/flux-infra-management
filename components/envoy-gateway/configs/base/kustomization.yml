@@ -3,8 +3,5 @@ kind: Kustomization
 resources:
   - envoy-proxy.yml
   - gatewayclass.yml
+  - gateway-certificate.yml
   - gateway.yml
-
-  - certificates/elastic.yml
-  - certificates/elasticsearch.yml
-  - certificates/vault.yml
