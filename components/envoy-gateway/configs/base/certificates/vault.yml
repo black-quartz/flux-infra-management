@@ -11,9 +11,9 @@ spec:
   privateKey:
     algorithm: ECDSA
     size: 256
-  commonName: vault.blackquartz.io
+  commonName: vault.ilysium.io
   dnsNames:
-    - vault.blackquartz.io
+    - vault.ilysium.io
   usages:
     - server auth
     - client auth

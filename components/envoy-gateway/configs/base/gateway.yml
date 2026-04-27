@@ -9,7 +9,7 @@ spec:
     - name: vault-https
       protocol: HTTPS
       port: 443
-      hostname: vault.blackquartz.io
+      hostname: vault.ilysium.io
       tls:
         certificateRefs:
           - name: vault-tls-secret
@@ -19,7 +19,7 @@ spec:
     - name: elastic-https
       protocol: HTTPS
       port: 443
-      hostname: elastic.blackquartz.io
+      hostname: elastic.ilysium.io
       tls:
         certificateRefs:
           - name: elastic-tls-secret
@@ -29,7 +29,7 @@ spec:
     - name: elasticsearch-https
       protocol: HTTPS
       port: 443
-      hostname: elasticsearch.blackquartz.io
+      hostname: elasticsearch.ilysium.io
       tls:
         certificateRefs:
           - name: elasticsearch-tls-secret

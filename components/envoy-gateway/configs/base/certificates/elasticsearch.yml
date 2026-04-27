@@ -11,9 +11,9 @@ spec:
   privateKey:
     algorithm: ECDSA
     size: 256
-  commonName: elasticsearch.blackquartz.io
+  commonName: elasticsearch.ilysium.io
   dnsNames:
-    - elasticsearch.blackquartz.io
+    - elasticsearch.ilysium.io
   usages:
     - server auth
     - client auth
