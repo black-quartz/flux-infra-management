@@ -1,20 +1,19 @@
 apiVersion: trust.cert-manager.io/v1alpha1
 kind: Bundle
 metadata:
-  name: black-quartz-root-ca
+  name: ilysium-root-ca
 spec:
   sources:
     - inLine: |
         -----BEGIN CERTIFICATE-----
-        MIIBgTCCASegAwIBAgIQQdWqCWUe5QuAJz2E6Gd5qDAKBggqhkjOPQQDAjAfMR0w
-        GwYDVQQDExRCbGFjayBRdWFydHogUm9vdCBDQTAeFw0yNjAzMTgyMzE2NTdaFw0z
-        NjAzMTUyMzE2NTdaMB8xHTAbBgNVBAMTFEJsYWNrIFF1YXJ0eiBSb290IENBMFkw
-        EwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEvFCr1FyiuAl+lE5NKJPKPAtXE3pvewNx
-        A0oUo5ROYchxtuWP17h5IbjHhq3Y0twOWRur2B4tH5AW9Tq1e9iXj6NFMEMwDgYD
-        VR0PAQH/BAQDAgEGMBIGA1UdEwEB/wQIMAYBAf8CAQEwHQYDVR0OBBYEFIzUGJk7
-        e0cadwVMPj6WV/9npijSMAoGCCqGSM49BAMCA0gAMEUCICoz66KTD7JKP3fgEfTZ
-        0L8nfa92UGyCCm3COQrYd4SJAiEAo0pk/bVrfZFxYPT4/1br8qu/J0RU0gDJXuqb
-        OBJe5sk=
+        MIIBdzCCAR2gAwIBAgIQdr3VnpzGvx7U4pzHMvlKOjAKBggqhkjOPQQDAjAaMRgw
+        FgYDVQQDEw9JbHlzaXVtIFJvb3QgQ0EwHhcNMjYwNDI3MDAzNzAzWhcNMzYwNDI0
+        MDAzNzAzWjAaMRgwFgYDVQQDEw9JbHlzaXVtIFJvb3QgQ0EwWTATBgcqhkjOPQIB
+        BggqhkjOPQMBBwNCAATOgCR0VriwrWvwxe9m91vMVmhG9gQlmGtVsr+1p9fxmdnm
+        7sgLGTOK7YnlvY8nivKDfMk33zMkS+XOLzezLdDpo0UwQzAOBgNVHQ8BAf8EBAMC
+        AQYwEgYDVR0TAQH/BAgwBgEB/wIBATAdBgNVHQ4EFgQUZiBt/1Q6yZDUQN9TVI9p
+        wwVQVOgwCgYIKoZIzj0EAwIDSAAwRQIgJSuDlHwdZaeqjJMzba+Cz4zKEPA3lBon
+        K99A5+jSojwCIQDNNoDxzGCzvIaiJ/5jGj/o1NSOHJym/4MXaAufjXgX1A==
         -----END CERTIFICATE-----
   target:
     configMap:
