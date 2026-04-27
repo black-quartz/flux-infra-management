@@ -1,19 +1,19 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: elasticsearch-tls
+  name: gateway-tls
   namespace: envoy-gateway-system
 spec:
   issuerRef:
     name: vault-gateway-issuer
     kind: ClusterIssuer
-  secretName: elasticsearch-tls-secret
+  secretName: gateway-tls-secret
   privateKey:
     algorithm: ECDSA
     size: 256
-  commonName: elasticsearch.ilysium.io
+  commonName: "*.ilysium.io"
   dnsNames:
-    - elasticsearch.ilysium.io
+    - "*.ilysium.io"
   usages:
     - server auth
     - client auth

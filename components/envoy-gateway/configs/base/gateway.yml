@@ -6,33 +6,14 @@ metadata:
 spec:
   gatewayClassName: cluster-gateway
   listeners:
-    - name: vault-https
+    - name: https
       protocol: HTTPS
       port: 443
-      hostname: vault.ilysium.io
+      hostname: "*.ilysium.io"
       tls:
+        mode: Terminate
         certificateRefs:
-          - name: vault-tls-secret
-      allowedRoutes:
-        namespaces:
-          from: All
-    - name: elastic-https
-      protocol: HTTPS
-      port: 443
-      hostname: elastic.ilysium.io
-      tls:
-        certificateRefs:
-          - name: elastic-tls-secret
-      allowedRoutes:
-        namespaces:
-          from: All
-    - name: elasticsearch-https
-      protocol: HTTPS
-      port: 443
-      hostname: elasticsearch.ilysium.io
-      tls:
-        certificateRefs:
-          - name: elasticsearch-tls-secret
+          - name: gateway-tls-secret
       allowedRoutes:
         namespaces:
           from: All
